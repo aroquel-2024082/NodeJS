@@ -5,6 +5,10 @@ export const createField = async (req, res) => {
         
         const fieldData = req.body;
 
+        if (req.file) {
+            fieldData.photo = req.file.path;
+        }
+
         /*if (req.file) {
             const extension = req.file.path.split('.').pop();
             const filename = req.file.filename;
